@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maryam ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Great+Vibes&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#05070d;
+    color:#fff;
+    font-family:Cairo,sans-serif;
+    overflow-x:hidden;
+}
+
+/* PASSWORD GATEWAY */
+#password-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #05070d;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-image: radial-gradient(circle at 50% 30%, rgba(151,28,62,.3), transparent 40%);
+}
+
+.password-box {
+    background: #0d0f18;
+    border: 1px solid #32212d;
+    border-radius: 20px;
+    padding: 35px 25px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,.6);
+}
+
+.password-box h3 {
+    font-family: "Great Vibes", cursive;
+    font-size: 38px;
+    color: #ff6483;
+    margin-bottom: 10px;
+}
+
+.password-box p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.password-box input {
+    width: 100%;
+    padding: 12px 15px;
+    background: #12121d;
+    border: 1px solid #3a2632;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    font-family: inherit;
+    margin-bottom: 15px;
+    transition: .3s;
+}
+
+.password-box input:focus {
+    border-color: #ff4e74;
+}
+
+.pass-error {
+    color: #ff6683;
+    font-size: 13px;
+    margin-top: 15px;
+    min-height: 20px;
+}
+
+#main-content {
+    display: none; /* مخفي لحين إدخال الباسورد صح */
+}
+
+section{
+    min-height:100vh;
+    padding:80px 20px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.container{
+    width:100%;
+    max-width:1050px;
+    margin:auto;
+}
+
+.heart{
+    color:#ff5578;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:65px;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 25px;
+    background:rgba(3,5,12,.65);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.logo{
+    font-family:"Great Vibes",cursive;
+    font-size:30px;
+    color:#fff;
+}
+
+.logo span{
+    color:#ff5578;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* MUSIC BUTTON */
+.music-btn {
+    background: #12121d;
+    border: 1px solid #3a2632;
+    color: #ff6483;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.music-btn:hover {
+    background: #21131c;
+    border-color: #ff4e74;
+}
+
+.menu{
+    font-size:25px;
+    cursor:pointer;
+}
+
+nav{
+    position:absolute;
+    top:65px;
+    right:15px;
+    width:190px;
+    padding:10px;
+    background:#10121d;
+    border:1px solid #2b2030;
+    border-radius:15px;
+    display:none;
+}
+
+nav.show{
+    display:block;
+}
+
+nav a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:11px;
+    border-radius:10px;
+}
+
+nav a:hover{
+    background:#21131c;
+    color:#ff6684;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    background:
+    radial-gradient(circle at 50% 30%,rgba(151,28,62,.25),transparent 35%),
+    linear-gradient(180deg,#070b16,#09050b);
+    overflow:hidden;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#7d163b;
+    filter:blur(180px);
+    opacity:.15;
+    border-radius:50%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.small-title{
+    color:#aaa;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:"Great Vibes",cursive;
+    font-size:90px;
+    color:#ff6483;
+    font-weight:400;
+    text-shadow:0 0 30px rgba(255,75,115,.25);
+}
+
+.hero h2{
+    font-size:25px;
+    font-weight:500;
+    margin-bottom:25px;
+}
+
+.hero p{
+    color:#aaa;
+    line-height:2;
+    max-width:500px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:13px 30px;
+    background:linear-gradient(135deg,#e63861,#9f183e);
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    border:1px solid #ff5276;
+    box-shadow:0 10px 30px rgba(200,30,70,.2);
+    transition:.3s;
+    cursor:pointer;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* GENERAL */
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.title h2{
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.title p{
+    color:#888;
+}
+
+.title .line{
+    width:70px;
+    height:2px;
+    background:#ff4d73;
+    margin:15px auto;
+}
+
+/* COUNTER */
+
+.counter-section{
+    background:#080911;
+}
+
+.counter{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    max-width:700px;
+    margin:30px auto;
+}
+
+.time-box{
+    background:linear-gradient(145deg,#15101a,#0d0e16);
+    border:1px solid #34202c;
+    border-radius:16px;
+    padding:25px 10px;
+    text-align:center;
+}
+
+.time-box strong{
+    display:block;
+    font-size:38px;
+    color:#ff5479;
+}
+
+.time-box span{
+    color:#888;
+    font-size:13px;
+}
+
+.counter-text{
+    text-align:center;
+    color:#aaa;
+    margin-top:25px;
+}
+
+/* TIMELINE */
+
+.timeline{
+    max-width:750px;
+    margin:auto;
+    position:relative;
+}
+
+.timeline:before{
+    content:"";
+    position:absolute;
+    right:18px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:#3a1b29;
+}
+
+.event{
+    position:relative;
+    padding-right:55px;
+    margin-bottom:25px;
+}
+
+.event:before{
+    content:"❤";
+    position:absolute;
+    right:4px;
+    top:5px;
+    width:30px;
+    height:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#17101a;
+    border:1px solid #ff4f75;
+    border-radius:50%;
+    color:#ff4f75;
+    font-size:13px;
+}
+
+.event-card{
+    background:#0e1019;
+    border:1px solid #2b202d;
+    border-radius:15px;
+    padding:18px;
+}
+
+.event-date{
+    color:#ff5478;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.event-card h3{
+    margin-bottom:5px;
+}
+
+.event-card p{
+    color:#999;
+    font-size:14px;
+}
+
+/* THINGS */
+
+.things{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.thing{
+    background:linear-gradient(145deg,#12121c,#0b0c13);
+    border:1px solid #2a1d29;
+    border-radius:18px;
+    padding:30px 20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.thing:hover{
+    transform:translateY(-5px);
+    border-color:#e43c65;
+}
+
+.icon{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.thing h3{
+    margin-bottom:7px;
+}
+
+.thing p{
+    color:#888;
+    font-size:13px;
+}
+
+/* MEMORIES */
+
+.memories{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.memory{
+    height:270px;
+    border-radius:15px;
+    overflow:hidden;
+    position:relative;
+    background:
+    linear-gradient(180deg,transparent 30%,rgba(0,0,0,.9)),
+    radial-gradient(circle at 50% 30%,#78435b,#171421 60%,#070810);
+    border:1px solid #33212b;
+    display:flex;
+    align-items:flex-end;
+    padding:20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.memory-1 {
+    background-image: linear-gradient(180deg,transparent 30%,rgba(0,0,0,.9)), url('1.jpg');
+}
+.memory-2 {
+    background-image: linear-gradient(180deg,transparent 30%,rgba(0,0,0,.9)), url('2.jpg');
+}
+.memory-3 {
+    background-image: linear-gradient(180deg,transparent 30%,rgba(0,0,0,.9)), url('3.jpg');
+}
+
+.memory div{
+    position:relative;
+    z-index:2;
+}
+
+.memory h3{
+    font-size:17px;
+}
+
+.memory p{
+    color:#bbb;
+    font-size:12px;
+}
+
+/* LETTER */
+
+.letter-section{
+    background:#09080e;
+}
+
+.letter{
+    max-width:700px;
+    margin:auto;
+    background:#e8d6b8;
+    color:#392b23;
+    padding:45px 35px;
+    border-radius:5px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+    position:relative;
+    transform:rotate(-.5deg);
+}
+
+.letter:after{
+    content:"❤";
+    position:absolute;
+    bottom:20px;
+    left:25px;
+    color:#b64b55;
+    font-size:35px;
+}
+
+.letter h3{
+    font-family:"Great Vibes",cursive;
+    font-size:40px;
+    color:#8d3545;
+    margin-bottom:20px;
+}
+
+.letter p{
+    line-height:2.2;
+    font-size:15px;
+}
+
+/* SURPRISE BOX (NEW) */
+.surprise-box {
+    max-width: 600px;
+    margin: 30px auto 0 auto;
+    background: #0d0f18;
+    border: 1px solid #32212d;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+}
+
+.surprise-text {
+    color: #ff6483;
+    font-size: 15px;
+    margin-top: 12px;
+    min-height: 25px;
+    font-weight: 500;
+}
+
+/* QUIZ */
+
+.quiz{
+    max-width:650px;
+    margin:auto;
+    background:#0d0f18;
+    border:1px solid #32212d;
+    border-radius:20px;
+    padding:30px;
+}
+
+.question{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.answers{
+    display:grid;
+    gap:10px;
+}
+
+.answer{
+    border:1px solid #3a2632;
+    background:#12121d;
+    color:white;
+    padding:13px;
+    border-radius:12px;
+    cursor:pointer;
+    text-align:right;
+    font-family:inherit;
+    transition: .3s;
+}
+
+.answer:hover{
+    border-color:#ff4e74;
+    background:#1f121b;
+}
+
+.result{
+    margin-top:20px;
+    text-align:center;
+    color:#ff6683;
+    min-height:25px;
+    font-weight: 500;
+}
+
+/* END */
+
+.end{
+    min-height:80vh;
+    text-align:center;
+    background:
+    radial-gradient(circle at 50% 50%,rgba(126,27,59,.2),transparent 45%),
+    #05070d;
+}
+
+.end h2{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.end p{
+    color:#999;
+}
+
+.big-love{
+    font-family:"Great Vibes",cursive;
+    color:#ff5578;
+    font-size:70px;
+    margin-top:25px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#04050a;
+    color:#777;
+    font-size:12px;
+}
+
+footer span{
+    color:#ff5578;
+}
+
+/* HEARTS */
+
+.floating-heart{
+    position:fixed;
+    bottom:-30px;
+    color:#ff4169;
+    animation:float 5s linear forwards;
+    pointer-events:none;
+    z-index:2000;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) scale(.7);
+        opacity:0;
+    }
+    15%{
+        opacity:.8;
+    }
+    100%{
+        transform:translateY(-110vh) scale(1.4);
+        opacity:0;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    section{
+        padding:75px 16px;
+    }
+
+    header{
+        padding:0 17px;
+    }
+
+    .hero h1{
+        font-size:68px;
+    }
+
+    .hero h2{
+        font-size:20px;
+    }
+
+    .counter{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .time-box strong{
+        font-size:32px;
+    }
+
+    .things{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .thing{
+        padding:22px 12px;
+    }
+
+    .memories{
+        grid-template-columns:1fr;
+    }
+
+    .memory{
+        height:230px;
+    }
+
+    .title h2{
+        font-size:27px;
+    }
+
+    .letter{
+        padding:30px 22px;
+    }
+
+    .letter p{
+        font-size:14px;
+    }
+
+    .big-love{
+        font-size:55px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- نافذة الباسورد -->
+<div id="password-modal">
+    <div class="password-box">
+        <h3>مريومتي ❤️</h3>
+        <p>دخلي الباسورد عشان تدخلي عالمنا الخاص</p>
+        <input type="password" id="pass-input" placeholder="اكتبي الباسورد هنا..." onkeypress="checkPress(event)">
+        <button class="btn" onclick="checkPassword()" style="margin-top:0; width:100%;">دخول ❤️</button>
+        <div class="pass-error" id="pass-error"></div>
+    </div>
+</div>
+
+<!-- المحتوى الرئيسي للموقع -->
+<div id="main-content">
+
+<!-- عنصر الصوت الخفي مع الأغنية اللي بعتها توماس -->
+<audio id="bg-music" loop>
+    <source src="toto.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+    <div class="logo">Maryam <span>♡</span></div>
+
+    <div class="header-controls">
+        <button class="music-btn" id="music-toggle-btn" onclick="toggleMusic()">
+            🎵 تشغيل الموسيقى
+        </button>
+        <div class="menu" onclick="toggleMenu()">☰</div>
+    </div>
+
+    <nav id="nav">
+        <a href="#home">البداية</a>
+        <a href="#counter">حكايتنا</a>
+        <a href="#story">قصتنا</a>
+        <a href="#things">بحب فيكي</a>
+        <a href="#memories">ذكرياتنا</a>
+        <a href="#letter">رسالتي</a>
+        <a href="#quiz">لعبة صغيرة</a>
+    </nav>
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            إلى الشخص اللي غيّر حاجات كتير في حياتي ❤️
+        </div>
+
+        <h2>من يوم ما دخلتي حياتي</h2>
+
+        <p>
+            حاجات كتير بقت ليها معنى تاني...
+            وقررت أعملك مكان صغير هنا،
+            يحكي جزء من حكايتنا.
+        </p>
+
+        <h1>Maryam</h1>
+
+        <a class="btn" href="#counter">
+            ابدئي حكايتنا ❤️
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- COUNTER -->
+
+<section class="counter-section" id="counter">
+
+<div class="container">
+
+<div class="title">
+    <h2>بقالنا مع بعض ❤️</h2>
+    <div class="line"></div>
+    <p>وكل يوم بيعدّي بيخليني أحبك أكتر</p>
+</div>
+
+<div class="counter">
+
+    <div class="time-box">
+        <strong id="months">0</strong>
+        <span>شهر</span>
+    </div>
+
+    <div class="time-box">
+        <strong id="days">0</strong>
+        <span>يوم</span>
+    </div>
+
+    <div class="time-box">
+        <strong id="hours">0</strong>
+        <span>ساعة</span>
+    </div>
+
+    <div class="time-box">
+        <strong id="minutes">0</strong>
+        <span>دقيقة</span>
+    </div>
+
+</div>
+
+<p class="counter-text">
+    والأيام الجاية أجمل... بإذن الله ❤️
+</p>
+
+</div>
+</section>
+
+
+<!-- STORY -->
+
+<section id="story">
+
+<div class="container">
+
+<div class="title">
+    <h2>قصتنا</h2>
+    <div class="line"></div>
+    <p>كل لحظة معاكي ليها حكاية</p>
+</div>
+
+<div class="timeline">
+
+    <div class="event">
+        <div class="event-card">
+            <div class="event-date">28 أبريل 2026</div>
+            <h3>البداية ❤️</h3>
+            <p>
+                اليوم اللي بدأت فيه حكاية مختلفة،
+                ومن وقتها الدنيا مبقتش زي الأول.
+            </p>
+        </div>
+    </div>
+
+    <div class="event">
+        <div class="event-card">
+            <div class="event-date">أول خروجة</div>
+            <h3>يوم مميز 📸</h3>
+            <p>
+                يوم بسيط، لكنه من الأيام اللي مستحيل تتنسي.
+            </p>
+        </div>
+    </div>
+
+    <div class="event">
+        <div class="event-card">
+            <div class="event-date">لحظة مميزة</div>
+            <h3>ضحكتك ❤️</h3>
+            <p>
+                واحدة من التفاصيل الصغيرة اللي بحبها فيكي.
+            </p>
+        </div>
+    </div>
+
+    <div class="event">
+        <div class="event-card">
+            <div class="event-date">23 سبتمبر 2026</div>
+            <h3>5 شهور ❤️</h3>
+            <p>
+                5 شهور من الحكاية ولسه عندي كلام كتير عايز أقولهولك.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- THINGS -->
+
+<section id="things">
+
+<div class="container">
+
+<div class="title">
+    <h2>حاجات بحبها فيكي</h2>
+    <div class="line"></div>
+    <p>ممكن أفضل أكتب لحد بكرة ❤️</p>
+</div>
+
+<div class="things">
+
+    <div class="thing">
+        <div class="icon">😊</div>
+        <h3>ضحكتك</h3>
+        <p>بتغير مود يوم كامل.</p>
+    </div>
+
+    <div class="thing">
+        <div class="icon">❤️</div>
+        <h3>طريقتك معايا</h3>
+        <p>مميزة ومختلفة عن أي حد.</p>
+    </div>
+
+    <div class="thing">
+        <div class="icon">🌸</div>
+        <h3>اهتمامك</h3>
+        <p>حتى التفاصيل الصغيرة.</p>
+    </div>
+
+    <div class="thing">
+        <div class="icon">✨</div>
+        <h3>وجودك</h3>
+        <p>بيخلّي الدنيا أهدى.</p>
+    </div>
+
+    <div class="thing">
+        <div class="icon">🥹</div>
+        <h3>طيبتك</h3>
+        <p>من أكتر الحاجات اللي بحبها.</p>
+    </div>
+
+    <div class="thing">
+        <div class="icon">♾️</div>
+        <h3>كل تفاصيلك</h3>
+        <p>حتى الحاجات اللي مش واخدة بالك منها.</p>
+    </div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- MEMORIES -->
+
+<section id="memories">
+
+<div class="container">
+
+<div class="title">
+    <h2>ذكرياتنا 📸</h2>
+    <div class="line"></div>
+    <p>هنا هنحط أحلى لحظاتنا</p>
+</div>
+
+<div class="memories">
+
+    <div class="memory memory-1">
+        <div>
+            <h3>أول خروجة ❤️</h3>
+            <p>ضحكنا فيه كتيرا</p>
+        </div>
+    </div>
+
+    <div class="memory memory-2">
+        <div>
+            <h3>يوم جميل 🌙</h3>
+            <p>لحظة مستحيل أنساها</p>
+        </div>
+    </div>
+
+    <div class="memory memory-3">
+        <div>
+            <h3>دونيتي✨</h3>
+            <p>لسه في صور وذكريات أكتر</p>
+        </div>
+    </div>
+
+</div>
+
+<p style="text-align:center;color:#777;margin-top:25px;font-size:13px">
+    تم تجهيز مكان الصور، بس حط اسم الصورة جوه كود الـ CSS فوق ❤️
+</p>
+
+</div>
+</section>
+
+
+<!-- LETTER -->
+
+<section class="letter-section" id="letter">
+
+<div class="container">
+
+<div class="title">
+    <h2>رسالتي ليكي 💌</h2>
+    <div class="line"></div>
+    <p>كلام من قلبي ليكي</p>
+</div>
+
+<div class="letter">
+
+    <h3>مريومتي الحلوة ..</h3>
+
+    <p>
+        من يوم ما دخلتي حياتي، في حاجات كتير بقت مختلفة.
+        وجودك معايا مش مجرد وجود شخص...
+        إنتي بقيتي حاجة جميلة في يومي.
+        <br><br>
+
+        يمكن مش دايمًا بعرف أقول كل اللي جوايا،
+        بس الحقيقة إنك من الناس اللي وجودهم بيفرق.
+        <br><br>
+
+        بحب ضحكتك، طريقتك، اهتمامك،
+        وحتى التفاصيل الصغيرة اللي يمكن إنتي نفسك مش واخدة بالك منها.
+        <br><br>
+
+        وعد مني إني أفضل أعمل ذكريات حلوة معاكي،
+        ونفضل نضحك ونخرج ونتخانق ونرجع نتصالح 😅❤️
+        <br><br>
+
+        والأهم...
+        إن الحكاية دي لسه في أولها.
+        <br><br>
+
+        <b>بحبك يا مريومتي ❤️</b>
+    </p>
+
+</div>
+
+<!-- صندوق الرسائل العشوائية المفاجئة -->
+<div class="surprise-box">
+    <button class="btn" style="margin-top:0;" onclick="showRandomLoveNote()">اضغطي هنا لو زعلانة مني 🥺❤️</button>
+    <div class="surprise-text" id="surprise-display">اضغطي الزرار وشوفي الرسالة المخفية ✨</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- QUIZ -->
+
+<section id="quiz">
+
+<div class="container">
+
+<div class="title">
+    <h2>اختبار الحب 😏</h2>
+    <div class="line"></div>
+    <p>نشوف مريومتي تعرف بابا قد إيه 😂❤️</p>
+</div>
+
+<div class="quiz">
+
+    <div class="question" id="question-text">
+        جاري تحميل السؤال...
+    </div>
+
+    <div class="answers" id="answers-container">
+        <!-- الأجوبة هتظهر هنا تلقائياً -->
+    </div>
+
+    <div class="result" id="result"></div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- END -->
+
+<section class="end">
+
+<div>
+
+    <h2>ودي مش نهاية الحكاية...</h2>
+
+    <p>
+        دي لسه البداية ❤️
+    </p>
+
+    <div class="big-love">
+        بحبك يا مريومتي
+    </div>
+
+    <a href="#home" class="btn">
+        نبدأ من الأول ❤️
+    </a>
+
+</div>
+
+</section>
+
+
+<footer>
+    موقع صغير .. لحكاية كبيرة
+    <span>♥</span>
+</footer>
+
+</div> <!-- نهاية المحتوى الرئيسي -->
+
+
+<script>
+
+/* PASSWORD CHECK */
+const correctPassword = "28"; 
+
+const wrongMessages = [
+    "بتهزري صح؟! الباسورد ده مش بتاعنا 😂 جربي تاني يا قلبي ❤️",
+    "عيدي تاني كده؟! شكل مريومتي نسيت تاريخنا ولا إيه 😏❤️",
+    "لا كده أزعل بقى 😭 فكري كويس واكتبي الباسورد الصح يا مريومتي!",
+    "غلط يا ست الكل 😂 اتأكدي كده من الكلمة أو التاريخ ❤️"
+];
+
+function checkPassword() {
+    const inputVal = document.getElementById("pass-input").value.trim();
+    const errorDiv = document.getElementById("pass-error");
+
+    if (inputVal === correctPassword) {
+        document.getElementById("password-modal").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+    } else {
+        const randomMsg = wrongMessages[Math.floor(Math.random() * wrongMessages.length)];
+        errorDiv.textContent = randomMsg;
+        document.getElementById("pass-input").value = "";
+    }
+}
+
+function checkPress(e) {
+    if (e.key === "Enter") {
+        checkPassword();
+    }
+}
+
+
+/* BACKGROUND MUSIC CONTROL */
+let isPlaying = false;
+function toggleMusic() {
+    const music = document.getElementById("bg-music");
+    const btn = document.getElementById("music-toggle-btn");
+    
+    if (isPlaying) {
+        music.pause();
+        btn.innerHTML = "🎵 تشغيل الموسيقى";
+        isPlaying = false;
+    } else {
+        music.play().then(() => {
+            btn.innerHTML = "🔇 إيقاف الموسيقى";
+            isPlaying = true;
+        }).catch(e => {
+            alert("تأكد إن ملف الأغنية في نفس الفولدر وبنفس الاسم المظبوط يا توماس!");
+        });
+    }
+}
+
+
+/* MENU */
+const menuToggleNav = document.getElementById("nav");
+document.querySelector(".menu").onclick = () => {
+    menuToggleNav.classList.toggle("show");
+};
+
+document.querySelectorAll("nav a").forEach(a=>{
+    a.onclick=()=>{
+        document.getElementById("nav").classList.remove("show");
+    };
+});
+
+
+/* COUNTER */
+const startDate = new Date("2026-04-28T00:00:00");
+
+function updateCounter(){
+    const now = new Date();
+    let totalMinutes = Math.floor((now-startDate)/60000);
+    if(totalMinutes < 0) totalMinutes = 0;
+
+    const totalHours = Math.floor(totalMinutes/60);
+    const totalDays = Math.floor(totalHours/24);
+    const months = Math.floor(totalDays/30);
+    const days = totalDays % 30;
+    const hours = totalHours % 24;
+    const minutes = totalMinutes % 60;
+
+    document.getElementById("months").textContent=months;
+    document.getElementById("days").textContent=days;
+    document.getElementById("hours").textContent=hours;
+    document.getElementById("minutes").textContent=minutes;
+}
+
+updateCounter();
+setInterval(updateCounter,60000);
+
+
+/* RANDOM LOVE NOTES */
+const loveNotes = [
+    "حتى وأنتي زعلانة، قمر وبتعصبيني برضه بحلاوتك 😂❤️",
+    "مهما حصل بينا، أنتي أقرب حد لقلبي والله ✨",
+    "اضحكي بقى وبلاش نكد، عشان ضحكتك دي بتعدل الكون كله 😊",
+    "بحبك بكل جنونك وتفاصيلك اللي مش بتخلص دي 🥰",
+    "تعرفي إنك أحلى حاجة حصلت في سنتي دي كلها؟ ❤️"
+];
+
+function showRandomLoveNote() {
+    const display = document.getElementById("surprise-display");
+    const randomNote = loveNotes[Math.floor(Math.random() * loveNotes.length)];
+    display.textContent = randomNote;
+}
+
+
+/* MULTI-QUESTION QUIZ SYSTEM */
+const quizData = [
+    {
+        question: "إيه أكتر حاجة بحبها فيكي؟",
+        answers: [
+            { text: "إنك بتزعلي مني 😂", correct: false },
+            { text: "ضحكتك ❤️", correct: true },
+            { text: "إنك بتكسبي الخناقات 😭", correct: false },
+            { text: "كل حاجة إلا دي 😏", correct: false }
+        ]
+    },
+    {
+        question: "تاريخ أول يوم بدأت فيه حكايتنا إيه؟",
+        answers: [
+            { text: "28 أبريل 2026 ❤️", correct: true },
+            { text: "مش فاكرة بصراحة 🤔", correct: false },
+            { text: "يوم ما قابلتك صدفة", correct: false },
+            { text: "مش هقول لك 😂", correct: false }
+        ]
+    },
+    {
+        question: "لما بنتناقش مين بيصالح التاني غالباً؟",
+        answers: [
+            { text: "إنتي طبعاً يا بطلة 😏", correct: false },
+            { text: "أنا عشان بحبك ومش بعرف أزعل منك ❤️", correct: true },
+            { text: "القطة تاكل حقوقنا", correct: false },
+            { text: "مفيش زعل أصلاً بيننا ✨", correct: false }
+        ]
+    },
+    {
+        question: "لو خيروك بين الأكل ولا الخروج معايا تختاري إيه؟",
+        answers: [
+            { text: "الأكل طبعاً من غير كلام 😂", correct: false },
+            { text: "أخرج معاك وأطلب أكل كمان 🍕❤️", correct: true },
+            { text: "ولا ده ولا ده", correct: false },
+            { text: "أنام أحسن 😴", correct: false }
+        ]
+    }
+];
+
+let currentQuestionIndex = 0;
+
+function loadQuiz() {
+    const qData = quizData[currentQuestionIndex];
+    document.getElementById("question-text").textContent = qData.question;
+    const answersContainer = document.getElementById("answers-container");
+    answersContainer.innerHTML = "";
+    document.getElementById("result").textContent = "";
+
+    qData.answers.forEach(ans => {
+        const btn = document.createElement("button");
+        btn.className = "answer";
+        btn.textContent = ans.text;
+        btn.onclick = () => handleAnswer(ans.correct);
+        answersContainer.appendChild(btn);
+    });
+}
+
+function handleAnswer(correct) {
+    const result = document.getElementById("result");
+    if (correct) {
+        result.innerHTML = "صح يا مريومتي 😂❤️ إنتي عارفة بابا كويس أوي!";
+        setTimeout(() => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                loadQuiz();
+            } else {
+                currentQuestionIndex = 0; 
+                document.getElementById("question-text").textContent = "خلصتي الاختبار يا مريومتي وطلع إنتي عارفة كل حاجة عننا! 🥰❤️";
+                document.getElementById("answers-container").innerHTML = `<button class="btn" onclick="loadQuiz()">نعيد الاختبار تاني؟ 🎮</button>`;
+                result.innerHTML = "أجمل اختبار لأجمل مريومة في الدنيا ❤️";
+            }
+        }, 1800);
+    } else {
+        result.innerHTML = "غلط 😂❤️ جربي تاني يا مريومتي وفعلي دماغك معانا!";
+    }
+}
+
+loadQuiz();
+
+
+/* FLOATING HEARTS */
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.className="floating-heart";
+    heart.innerHTML="❤";
+    heart.style.left= Math.random()*100+"vw";
+    heart.style.fontSize= (10+Math.random()*18)+"px";
+    heart.style.animationDuration= (4+Math.random()*4)+"s";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(createHeart,1800);
+
+</script>
+
+</body>
+</html>
