@@ -467,7 +467,16 @@ nav a:hover{
 }
 .memory-3 {
     background-image: linear-gradient(180deg,transparent 30%,rgba(0,0,0,.9)), url('3.jpg');
+
 }
+
+
+
+.memory-4 {
+    background-image: linear-gradient(180deg,transparent 30%,rgba(0,0,0,.9)), url('WhatsApp Image 2026-10-06 at 12.39.48 AM.jpeg');
+}
+
+
 
 .memory div{
     position:relative;
@@ -539,6 +548,26 @@ nav a:hover{
     margin-top: 12px;
     min-height: 25px;
     font-weight: 500;
+}
+
+/* SECRET CONFESSION POPUP STYLE (NEW) */
+.secret-box {
+    max-width: 600px;
+    margin: 25px auto 0 auto;
+    background: #0d0f18;
+    border: 1px solid #3a2632;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+}
+
+.secret-display {
+    color: #ff6483;
+    font-size: 14px;
+    margin-top: 12px;
+    min-height: 25px;
+    font-weight: 500;
+    line-height: 1.8;
 }
 
 /* QUIZ */
@@ -724,7 +753,7 @@ footer span{
         <h3>مريومتي ❤️</h3>
         <p>دخلي الباسورد عشان تدخلي عالمنا الخاص</p>
         <input type="password" id="pass-input" placeholder="اكتبي الباسورد هنا..." onkeypress="checkPress(event)">
-        <button class="btn" onclick="checkPassword()" style="margin-top:0; width:100%;">دخول ❤️</button>
+        <button class="btn" onclick="checkPassword()" style="margin-top:0; width:100%;">دخول ❤️️</button>
         <div class="pass-error" id="pass-error"></div>
     </div>
 </div>
@@ -958,7 +987,7 @@ footer span{
 <div class="title">
     <h2>ذكرياتنا 📸</h2>
     <div class="line"></div>
-    <p>هنا هنحط أحلى لحظاتنا</p>
+    <p>هنا أحلى لحظاتنا والصدفة اللي جمعتنا</p>
 </div>
 
 <div class="memories">
@@ -972,8 +1001,15 @@ footer span{
 
     <div class="memory memory-2">
         <div>
-            <h3>يوم جميل 🌙</h3>
-            <p>لحظة مستحيل أنساها</p>
+            <h3>  يوم عمري م هنساه 🤫</h3>
+            <p> بحب ايدك انا.❤️</p>
+        </div>
+    </div>
+
+      <div class="memory memory-4">
+        <div>
+            <h3>الصدفة اللي غيرت كل حاجة 🤫</h3>
+            <p>الصورة دي تثبت إنك طول عمرك سابقة بخطوة، وأنا ماشي وراكي مغمض عيني وبدور عليكِ.. تفتكري لو كنت عرفتك ساعتها كنت عملت إيه؟ الأكيد إني ما كنتش سيبتك تمشي لوحدك.</p>
         </div>
     </div>
 
@@ -984,6 +1020,12 @@ footer span{
         </div>
     </div>
 
+</div>
+
+<!-- زرار السر الخطير / الاعتراف الخجول -->
+<div class="secret-box">
+    <button class="btn" style="margin-top:0;" onclick="showSecretConfession()">سر خطير مش هقوله غير لما تقربي 🤫</button>
+    <div class="secret-display" id="secret-display">اضغطي الزرار وشوفي الاعتراف السري اللي بيني وبينك ✨</div>
 </div>
 
 <p style="text-align:center;color:#777;margin-top:25px;font-size:13px">
@@ -1215,6 +1257,20 @@ function showRandomLoveNote() {
     const display = document.getElementById("surprise-display");
     const randomNote = loveNotes[Math.floor(Math.random() * loveNotes.length)];
     display.textContent = randomNote;
+}
+
+
+/* SECRET CONFESSION (NEW FLIRTY TOUCH) */
+const secretConfessions = [
+    "بصراحة؟ من ساعة ما شفت صورتك وأنا وراكي بالصدفة لحد النهاردة، وكل همي في الدنيا إني أفضل قريب منك.. ولو كنت قدامي دلوقتي حالا، مكنتش هكتفي بكلمتين حلوين وبس! 🤫❤️",
+    "عارفة أكتر حاجة بفكر فيها إيه؟ إني أفضل ماشي وراكي كده في كل خطوة في حياتي وما أسيبكيش لوحدك أبداً 🥰",
+    "بصي يا ستي.. من غير ما أتكلم كتير، أنتي دخلتي قلبي صدفة، بس بقيتي أغلى حاجة عندي في الدنيا دي كلها ✨"
+];
+
+function showSecretConfession() {
+    const display = document.getElementById("secret-display");
+    const randomSecret = secretConfessions[Math.floor(Math.random() * secretConfessions.length)];
+    display.textContent = randomSecret;
 }
 
 
